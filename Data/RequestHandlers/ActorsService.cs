@@ -3,14 +3,19 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce.Data.Services
 {
-    public class ActorsService : IActorsService
+    public class ActorsService 
     {
         private readonly dbContext _context;
-        public ActorsService(dbContext context) { _context = context; }
+        public ActorsService(dbContext context)
+        { 
+            _context = context; 
+        
+        }
 
         public void Add(Actors actor)
         {
-            throw new NotImplementedException();
+            _context.Actors.Add(actor);
+            _context.SaveChanges();
         }
 
         public void Delete(int id)
