@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore;
 namespace Ecommerce.Data.RequestHandlers.ActorsRequestHandlers
 {
     public class GetActors : IRequest<IEnumerable<Actors>> { }
-    public class GetActorHandler : IRequestHandler<GetActors, IEnumerable<Actors>>
+    public class GetProducerHandler : IRequestHandler<GetActors, IEnumerable<Actors>>
     {
         private readonly dbContext _context;
-        public GetActorHandler(dbContext context)
+        public GetProducerHandler(dbContext context)
         {
             _context = context;
 

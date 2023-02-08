@@ -1,9 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MediatR;
+using System.ComponentModel.DataAnnotations;
 
 namespace Ecommerce.Models
 {
-    public class Producer
+    public class Producer : IRequest<Unit>
     {
+        # nullable disable
         [Key]
         public int Id { get; set; }
         [Display(Name = "Profile Picture")]

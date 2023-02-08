@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FluentValidation;
 
-namespace Ecommerce.Models.Validators
+namespace Ecommerce.Models.Validators.ActorValidators
 {
     public class ActorValidator : AbstractValidator<Actors>
     {
@@ -15,6 +15,6 @@ namespace Ecommerce.Models.Validators
             RuleFor(m => m.ProfilePictureURL).NotEmpty().WithMessage("Profile Picture Is Required");
             RuleFor(m => m.Bio).NotEmpty().WithMessage("Bio Is Required");
         }
-        
+
     }
 }

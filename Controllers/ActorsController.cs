@@ -2,7 +2,7 @@
 using Ecommerce.Data.RequestHandlers.ActorsRequestHandlers;
 using Ecommerce.Data.Services;
 using Ecommerce.Models;
-using Ecommerce.Models.Validators;
+using Ecommerce.Models.Validators.ActorValidators;
 using FluentValidation;
 using FluentValidation.Results;
 using MediatR;
@@ -51,7 +51,7 @@ namespace Ecommerce.Controllers
                 return View(actor);
             }
 
-            await _actorsService.Send(actor);
+            await _actorsService.Send(new AddActor { actors = actor});
 
             return RedirectToAction(nameof(Index));
 
@@ -147,7 +147,7 @@ namespace Ecommerce.Controllers
 
             await _actorsService.Send(new DeleteActor { Id = id });
 
-            return RedirectToAction(nameof(NotFound));
+            return View("NotFound");
 
         }
     }

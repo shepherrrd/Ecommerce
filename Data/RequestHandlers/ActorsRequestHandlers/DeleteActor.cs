@@ -23,7 +23,7 @@ namespace Ecommerce.Data.RequestHandlers.ActorsRequestHandlers
         {
             var response = await _context.Actors.FirstOrDefaultAsync(a => a.Id == request.Id, cancellationToken);
 
-            _context.Remove(response);
+           _context.Remove(response);
            await  _context.SaveChangesAsync();
             return null;
            
