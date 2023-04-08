@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using MediatR;
 
 namespace Ecommerce.Models
 {
-    public class Cinema
+    public class Cinema : IRequest<Unit>
     {
 
         [Key]
